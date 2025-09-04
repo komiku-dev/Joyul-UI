@@ -19,10 +19,10 @@ export default function Home() {
         "
       >
         <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tighter mb-4">
-          Joyul UI
+          Joyul (조율)
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground mb-8">
-          Welcome to the Joyul UI showcase with Tailwind v4
+          Welcome to Joyul UI with Tailwind v4
         </p>
         <Link
           href="/theme-colors"
