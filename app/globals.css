@@ -237,8 +237,8 @@ RAW COLOR PALETTE + LIGHT MODE
   --warning-950: oklch(0.38 0.07 95);
 
   /* Helpers */
-  --color-white: oklch(1 0 0);
-  --color-black: oklch(0 0 0);
+  --white: oklch(1 0 0);
+  --black: oklch(0 0 0);
 
   /* ------------------------------------------ */
   /* SEMANTIC TOKENS - LIGHT MODE (DEFAULT)     */
@@ -249,12 +249,12 @@ RAW COLOR PALETTE + LIGHT MODE
   --foreground: var(--base-800);
 
   /* Surfaces */
-  --surface: var(--color-white);
+  --surface: var(--white);
   --surface-foreground: var(--foreground);
 
   /* Interactive Colors */
   --primary: var(--primary-950);
-  --primary-foreground: var(--color-white);
+  --primary-foreground: var(--white);
 
   --accent: var(--base-100);
   --accent-foreground: var(--foreground);
@@ -269,13 +269,13 @@ RAW COLOR PALETTE + LIGHT MODE
 
   /* Semantic Status Colors */
   --destructive: var(--destructive-600);
-  --destructive-foreground: var(--color-white);
+  --destructive-foreground: var(--white);
 
   --success: var(--success-600);
-  --success-foreground: var(--color-white);
+  --success-foreground: var(--white);
 
   --warning: var(--warning-500);
-  --warning-foreground: var(--base-950);
+  --warning-foreground: var(--white);
 }
 
 /*
@@ -300,8 +300,8 @@ DARK MODE
   --surface-foreground: var(--foreground);
 
   /* Interactive Colors */
-  --primary: var(--primary-400);
-  --primary-foreground: var(--color-white);
+  --primary: var(--primary-50);
+  --primary-foreground: var(--primary-950);
 
   --accent: var(--base-800);
   --accent-foreground: var(--foreground);
@@ -318,10 +318,10 @@ DARK MODE
   --destructive: var(--destructive-500);
   --destructive-foreground: var(--base-950);
 
-  --success: var(--success-500);
+  --success: var(--success-400);
   --success-foreground: var(--base-950);
 
-  --warning: var(--warning-400);
+  --warning: var(--warning-300);
   --warning-foreground: var(--base-950);
 }
 
