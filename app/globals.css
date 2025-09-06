@@ -3,16 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
-
-============================================
-Joyul UI - Theme Definition
-============================================
-This block exposes the core semantic tokens of the Joyul UI design system
-for use with compatible styling frameworks.
-
-*/
-
 @theme inline {
   /* ------------------------------------------ */
   /* RAW COLOR PALETTE                          */
@@ -96,15 +86,7 @@ for use with compatible styling frameworks.
   --color-warning-700: var(--warning-700);
   --color-warning-800: var(--warning-800);
   --color-warning-900: var(--warning-900);
-  --color-warning-950: var(--warning-950)
-
-  /* Helpers */
-  --color-white: var(--white);
-  --color-black: var(--black);
-
-  /* ------------------------------------------ */
-  /* SEMANTIC TOKENS                            */
-  /* ------------------------------------------ */
+  --color-warning-950: var(--warning-950);
 
   /* Core Palette */
   --color-background: var(--background);
@@ -142,14 +124,6 @@ for use with compatible styling frameworks.
   /* Typography  */
   --font-satoshi: var(--satoshi);
 }
-
-/*
-
-------------------------------------------
-RAW COLOR PALETTE + LIGHT MODE
-------------------------------------------
-
-*/
 
 :root {
   /* ------------------------------------------ */
@@ -236,10 +210,6 @@ RAW COLOR PALETTE + LIGHT MODE
   --warning-900: oklch(0.45 0.09 95);
   --warning-950: oklch(0.38 0.07 95);
 
-  /* Helpers */
-  --white: oklch(1 0 0);
-  --black: oklch(0 0 0);
-
   /* ------------------------------------------ */
   /* SEMANTIC TOKENS - LIGHT MODE (DEFAULT)     */
   /* ------------------------------------------ */
@@ -249,12 +219,12 @@ RAW COLOR PALETTE + LIGHT MODE
   --foreground: var(--base-800);
 
   /* Surfaces */
-  --surface: var(--white);
+  --surface: var(--base-50);
   --surface-foreground: var(--foreground);
 
   /* Interactive Colors */
   --primary: var(--primary-950);
-  --primary-foreground: var(--white);
+  --primary-foreground: var(--base-50);
 
   --accent: var(--base-100);
   --accent-foreground: var(--foreground);
@@ -269,22 +239,14 @@ RAW COLOR PALETTE + LIGHT MODE
 
   /* Semantic Status Colors */
   --destructive: var(--destructive-600);
-  --destructive-foreground: var(--white);
+  --destructive-foreground: var(--base-50);
 
   --success: var(--success-600);
-  --success-foreground: var(--white);
+  --success-foreground: var(--base-50);
 
   --warning: var(--warning-500);
-  --warning-foreground: var(--white);
+  --warning-foreground: var(--base-50);
 }
-
-/*
-
-------------------------------------------
-DARK MODE
-------------------------------------------
-
-*/
 
 .dark {
   /* ------------------------------------------ */
@@ -324,14 +286,6 @@ DARK MODE
   --warning: var(--warning-300);
   --warning-foreground: var(--base-950);
 }
-
-/*
-
-------------------------------------------
-BASE STYLES
-------------------------------------------
-
-*/
 
 @layer base {
   * {

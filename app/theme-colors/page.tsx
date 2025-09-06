@@ -4,6 +4,7 @@ import React, { JSX, useCallback } from "react";
 import Link from "next/link";
 import { toast } from "react-hot-toast";
 import ThemeSwitchButton from "@/components/themeSwitchButton";
+import { IconArrowLeft } from "@tabler/icons-react";
 
 const oklchColorMap: Record<string, string> = {
   "base-50": "oklch(0.9847 0.0007 105.41)",
@@ -185,24 +186,6 @@ function useCopyToClipboard(): (text: string) => void {
   return copy;
 }
 
-const ArrowLeftIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg
-    viewBox="0 0 24 24"
-    width="16"
-    height="16"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.5"
-    {...props}
-  >
-    <path
-      d="M19 12H5m7 7-7-7 7-7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
 const Section: React.FC<{
   title: string;
   children: React.ReactNode;
@@ -210,7 +193,7 @@ const Section: React.FC<{
   animationClasses: string;
 }> = ({ title, children, className = "", animationClasses }) => (
   <section
-    className={`bg-black/20 dark:bg-white/5 backdrop-blur-xl p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/10 ${animationClasses} ${className}`}
+    className={`bg-black/15 dark:bg-white/5 backdrop-blur-xl p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/10 ${animationClasses} ${className}`}
   >
     <h2 className="text-2xl font-bold tracking-tight mb-6 text-foreground">
       {title}
@@ -351,12 +334,12 @@ export default function ThemeColorsPage(): JSX.Element {
             </p>
           </div>
           <div className="flex-shrink-0 flex items-center gap-2">
-            <ThemeSwitchButton /> {/* <-- ADD THE NEW BUTTON HERE */}
+            <ThemeSwitchButton />
             <Link
               href="./"
               className="flex items-center gap-2 text-primary-foreground bg-primary px-4 py-2 rounded-full shadow-lg hover:bg-primary/80 transition-all font-semibold whitespace-nowrap hover:scale-105 active:scale-95"
             >
-              <ArrowLeftIcon />
+              <IconArrowLeft />
               Back
             </Link>
           </div>

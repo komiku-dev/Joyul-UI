@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import ThemeSwitchButton from "@/components/themeSwitchButton";
+import { IconArrowLeft } from "@tabler/icons-react";
 
 const normalVariants = [
   { label: "Regular", className: "font-normal" },
@@ -67,24 +68,6 @@ const FontVariantCard: React.FC<FontVariantCardProps> = ({
   );
 };
 
-const ArrowLeftIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg
-    viewBox="0 0 24 24"
-    width="16"
-    height="16"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.5"
-    {...props}
-  >
-    <path
-      d="M19 12H5m7 7-7-7 7-7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
 export default function FontPage() {
   const [text, setText] = useState(
     "The quick brown fox jumps over the lazy dog."
@@ -110,19 +93,19 @@ export default function FontPage() {
             </p>
           </div>
           <div className="flex-shrink-0 flex items-center gap-2">
-            <ThemeSwitchButton /> {/* <-- ADD THE NEW BUTTON HERE */}
+            <ThemeSwitchButton />
             <Link
               href="./"
               className="flex items-center gap-2 text-primary-foreground bg-primary px-4 py-2 rounded-full shadow-lg hover:bg-primary/80 transition-all font-semibold whitespace-nowrap hover:scale-105 active:scale-95"
             >
-              <ArrowLeftIcon />
+              <IconArrowLeft />
               Back
             </Link>
           </div>
         </header>
 
         <section
-          className={`bg-black/20 dark:bg-white/5 backdrop-blur-xl p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/10 ${animationBase}`}
+          className={`bg-black/15 dark:bg-white/5 backdrop-blur-xl p-4 sm:p-6 rounded-2xl shadow-2xl border border-white/10 ${animationBase}`}
         >
           <div className="flex flex-col items-center gap-6">
             <div className="flex flex-col gap-10 w-full">
