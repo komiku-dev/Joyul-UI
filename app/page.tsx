@@ -1,4 +1,7 @@
+
 import Link from "next/link";
+import ThemeSwitchButton from "@/components/themeSwitchButton";
+import { IconPalette, IconTypography, IconComponents } from "@tabler/icons-react";
 
 export default function Home() {
   return (
@@ -10,46 +13,42 @@ export default function Home() {
       </div>
 
       <div
-        className="
-          flex flex-col items-center justify-center 
-          bg-black/20 dark:bg-white/5 backdrop-blur-xl 
-          p-8 sm:p-12 rounded-2xl shadow-2xl border border-white/10 
-          text-center max-w-lg
-          animate-in fade-in slide-in-from-bottom-5 zoom-in-95 duration-700 ease-out
-        "
+        className="flex flex-col items-center justify-center bg-black/15 dark:bg-white/5 backdrop-blur-xl p-8 sm:p-12 rounded-2xl shadow-2xl border border-white/10 text-center max-w-lg animate-in fade-in slide-in-from-bottom-5 zoom-in-95 duration-700 ease-out"
       >
-        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tighter mb-4">
-          Joyul (조율)
-        </h1>
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tighter">Joyul <span className="text-primary">(조율)</span></h1>
+        </div>
         <p className="text-lg sm:text-xl text-muted-foreground mb-8">
           Welcome to Joyul UI with Tailwind v4
         </p>
-        <Link
-          href="/theme-colors"
-          className="
-            px-6 py-3 rounded-full 
-            bg-primary text-primary-foreground 
-            font-semibold shadow-lg 
-            transition-all duration-300
-            hover:bg-primary/80 hover:scale-105 
-            active:scale-95
-          "
-        >
-          Explore Theme Colors
-        </Link>
-        <Link
-          href="/font"
-          className="
-              mt-4 px-6 py-3 rounded-full
-              bg-primary text-primary-foreground
-              font-semibold shadow-lg
-              transition-all duration-300
-              hover:bg-primary/80 hover:scale-105
-              active:scale-95
-            "
-        >
-          View Satoshi Font
-        </Link>
+        <div className="flex flex-col gap-4 w-full">
+          <Link
+            href="/theme-colors"
+            className="flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg transition-all duration-300 hover:bg-primary/80 hover:scale-105 active:scale-95 justify-center"
+          >
+            <IconPalette className="w-5 h-5" />
+            <span>Explore Theme Colors</span>
+          </Link>
+
+          <Link
+            href="/font"
+            className="flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg transition-all duration-300 hover:bg-primary/80 hover:scale-105 active:scale-95 justify-center"
+          >
+            <IconTypography className="w-5 h-5" />
+            <span>View Satoshi Font</span>
+          </Link>
+
+          <Link
+            href="/components"
+            className="flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg transition-all duration-300 hover:bg-primary/80 hover:scale-105 active:scale-95 justify-center"
+          >
+            <IconComponents className="w-5 h-5" />
+            <span>Explore Components</span>
+          </Link>
+        </div>
+        <div className="mt-8 flex justify-center">
+          <ThemeSwitchButton />
+        </div>
       </div>
     </main>
   );
