@@ -7,89 +7,93 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import {
+  useControlState,
   Controls,
   ControlsFolder,
   ControlsCheckbox,
   ControlsText,
+  ControlsSeparator,
+  ControlsTitle,
 } from "@/components/controls";
-import { useState } from "react";
 
 export default function ExampleAccordion() {
-  const [defaultValue, setDefaultValue] = useState("item-1");
-  const [openMultiple, setOpenMultiple] = useState(false);
-  const [disabled, setDisabled] = useState(false);
+  const { controlsState } = useControlState();
 
-  const [itemOneDisabled, setItemOneDisabled] = useState(false);
-  const [itemTwoDisabled, setItemTwoDisabled] = useState(false);
-  const [itemThreeDisabled, setItemThreeDisabled] = useState(false);
+  // Root
+  const rootMultiple = controlsState["root-multiple"];
+  const rootDisabled = controlsState["root-disabled"];
 
-  const [itemOneValue, setItemOneValue] = useState("item-1");
-  const [itemTwoValue, setItemTwoValue] = useState("item-2");
-  const [itemThreeValue, setItemThreeValue] = useState("item3");
+  // Item 1
+  const item1Value = controlsState["item-1-value"];
+  const item1Disabled = controlsState["item-1-disabled"];
+
+  // Item 2
+  const item2Value = controlsState["item-2-value"];
+  const isItem2Disabled = controlsState["item-2-disabled"];
+
+  // Item 3
+  const item3Value = controlsState["item-3-value"];
+  const item3Disabled = controlsState["item-3-disabled"];
 
   return (
     <>
       <Controls title="Controls">
-        <ControlsText
-          title="Default Value"
-          value={defaultValue}
-          onChange={setDefaultValue}
-          disabled
-        />
+        <ControlsTitle title="Root" />
         <ControlsCheckbox
           title="Open multiple"
-          value={openMultiple}
-          onChange={setOpenMultiple}
+          id="root-multiple"
+          initialValue={false}
         />
         <ControlsCheckbox
           title="Disabled"
-          value={disabled}
-          onChange={setDisabled}
+          id="root-disabled"
+          initialValue={false}
         />
+        <ControlsSeparator />
+        <ControlsTitle title="Items" />
         <ControlsFolder title="Item 1">
           <ControlsText
             title="Value"
-            value={itemOneValue}
-            onChange={setItemOneValue}
+            id="item-1-value"
+            initialValue={"item-1"}
           />
           <ControlsCheckbox
             title="Disabled"
-            value={itemOneDisabled}
-            onChange={setItemOneDisabled}
+            id="item-1-disabled"
+            initialValue={false}
           />
         </ControlsFolder>
         <ControlsFolder title="Item 2">
           <ControlsText
             title="Value"
-            value={itemTwoValue}
-            onChange={setItemTwoValue}
+            id="item-2-value"
+            initialValue={"item-2"}
           />
           <ControlsCheckbox
             title="Disabled"
-            value={itemTwoDisabled}
-            onChange={setItemTwoDisabled}
+            id="item-2-disabled"
+            initialValue={false}
           />
         </ControlsFolder>
         <ControlsFolder title="Item 3">
           <ControlsText
             title="Value"
-            value={itemThreeValue}
-            onChange={setItemThreeValue}
+            id="item-3-value"
+            initialValue={"item-3"}
           />
           <ControlsCheckbox
             title="Disabled"
-            value={itemThreeDisabled}
-            onChange={setItemThreeDisabled}
+            id="item-3-disabled"
+            initialValue={false}
           />
         </ControlsFolder>
       </Controls>
       <Accordion
         className={"w-96"}
-        openMultiple={openMultiple}
-        disabled={disabled}
-        defaultValue={[defaultValue]}
+        openMultiple={rootMultiple}
+        disabled={rootDisabled}
       >
-        <AccordionItem value={itemOneValue} disabled={itemOneDisabled}>
+        <AccordionItem value={item1Value} disabled={item1Disabled}>
           <AccordionTrigger>What is Joyul UI?</AccordionTrigger>
           <AccordionContent>
             <div className="p-3">
@@ -103,7 +107,7 @@ export default function ExampleAccordion() {
             </div>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value={itemTwoValue} disabled={itemTwoDisabled}>
+        <AccordionItem value={item2Value} disabled={isItem2Disabled}>
           <AccordionTrigger>How do I get started?</AccordionTrigger>
           <AccordionContent>
             <div className="p-3 space-y-2">
@@ -119,7 +123,7 @@ export default function ExampleAccordion() {
             </div>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value={itemThreeValue} disabled={itemThreeDisabled}>
+        <AccordionItem value={item3Value} disabled={item3Disabled}>
           <AccordionTrigger>Is it accessible</AccordionTrigger>
           <AccordionContent>
             <div className="p-3">
