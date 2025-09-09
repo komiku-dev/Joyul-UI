@@ -5,12 +5,14 @@ import { Accordion as AccordionPrimitives } from "@base-ui-components/react";
 import { IconChevronDown } from "@tabler/icons-react";
 
 function Accordion({
+  openMultiple = false,
   className,
   ...props
 }: React.ComponentProps<typeof AccordionPrimitives.Root>) {
   return (
     <AccordionPrimitives.Root
-      className={cn("flex flex-col justify-center w-full", className)}
+      openMultiple={openMultiple}
+      className={cn("flex flex-col justify-center text-foreground", className)}
       {...props}
     />
   );
@@ -22,13 +24,18 @@ function AccordionItem({
 }: React.ComponentProps<typeof AccordionPrimitives.Item>) {
   return (
     <AccordionPrimitives.Item
-      className={cn("not-last:border-b", className)}
+      className={cn(
+        "group",
+        "not-last:border-b dark:border-foreground/15",
+        "data-[disabled]:opacity-70",
+        className
+      )}
       {...props}
     />
   );
 }
 
-function AccordionHeader({
+function AccordionTrigger({
   children,
   className,
   ...props
@@ -37,7 +44,8 @@ function AccordionHeader({
     <AccordionPrimitives.Header>
       <AccordionPrimitives.Trigger
         className={cn(
-          "group relative flex w-full items-center justify-between gap-4 py-2 pr-1 pl-3 text-left font-medium hover:underline",
+          "group relative flex w-full items-baseline justify-between gap-4 py-2 pr-1 pl-3 text-left font-medium hover:underline",
+          "disabled:cursor-not-allowed disabled:no-underline disabled:opacity-50",
           className
         )}
         {...props}
@@ -56,7 +64,9 @@ function AccordionContent({
   return (
     <AccordionPrimitives.Panel
       className={cn(
-        "h-[var(--accordion-panel-height)] px-3 pb-4 pt-1 overflow-hidden text-base text-muted-foreground transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0",
+        "h-[var(--accordion-panel-height)] overflow-hidden text-base text-muted-foreground",
+        "transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0",
+        "group-data-[disabled]:opacity-70",
         className
       )}
       {...props}
@@ -64,4 +74,4 @@ function AccordionContent({
   );
 }
 
-export { Accordion, AccordionItem, AccordionHeader, AccordionContent };
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
