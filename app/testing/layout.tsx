@@ -1,19 +1,13 @@
-"use client";
-
 import ThemeSwitcher from "@/components/theme-switcher";
 import { IconArrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
-import { usePathname } from "next/navigation";
 
 export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-  const backHref = pathname === "/testing" ? "./" : "/testing";
-
   return (
     <div className="min-h-screen bg-background text-foreground p-4 sm:p-8 md:p-12 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -36,7 +30,7 @@ export default function Layout({
           <div className="flex-shrink-0 flex items-center gap-2">
             <ThemeSwitcher />
             <Link
-              href={backHref}
+              href="./"
               className="flex items-center gap-2 text-primary-foreground bg-primary px-4 py-2 rounded-full shadow-lg hover:bg-primary/80 transition-all font-semibold whitespace-nowrap hover:scale-105 active:scale-95"
             >
               <IconArrowLeft />
