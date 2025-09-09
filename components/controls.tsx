@@ -211,7 +211,7 @@ function Controls({
     <ControlsContext.Provider value={{ depth: 1, isRoot: true }}>
       <div
         className={cn(
-          "absolute top-4 left-4 w-72 overflow-hidden rounded-sm border",
+          "absolute top-4 left-4 w-72 z-50 overflow-hidden rounded-sm border",
           "bg-white text-slate-900 border-slate-200",
           "dark:bg-zinc-900 dark:text-zinc-300 dark:border-zinc-700",
           "transition-shadow duration-200 ease-out",
