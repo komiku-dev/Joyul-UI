@@ -14,6 +14,7 @@ import {
   ControlsText,
   ControlsSeparator,
   ControlsTitle,
+  ControlsAlert,
 } from "@/components/controls";
 
 export default function ExampleAccordion() {

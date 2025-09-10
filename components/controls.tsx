@@ -262,6 +262,8 @@ function Controls({
               !isOpen && "invisible"
             )}
           >
+            <ControlsAlert text="This menu is still a work in progress" />
+            <ControlsSeparator />
             {children}
           </div>
         </div>
