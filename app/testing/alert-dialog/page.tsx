@@ -3,12 +3,9 @@
 import {
   useControlState,
   Controls,
-  ControlsAlert,
   ControlsTitle,
   ControlsFolder,
   ControlsDropdown,
-  ControlsSeparator,
-  ControlsMonitor,
 } from "@/components/controls";
 import {
   AlertDialog,

@@ -39,7 +39,7 @@ export default function NotFound() {
             <div className="flex-shrink-0 flex items-center gap-2">
               <ThemeSwitcher />
               <Link
-                href="/testing"
+                href="/"
                 className="flex items-center gap-2 text-primary-foreground bg-primary px-4 py-2 rounded-full shadow-lg hover:bg-primary/80 transition-all font-semibold whitespace-nowrap hover:scale-105 active:scale-95"
               >
                 <IconArrowLeft />
