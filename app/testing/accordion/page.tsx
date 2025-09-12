@@ -14,7 +14,7 @@ import {
   ControlsText,
   ControlsSeparator,
   ControlsTitle,
-} from "@/components/controls";
+} from "@/components/controls/index";
 
 export default function ExampleAccordion() {
   const { controlsState } = useControlState();
