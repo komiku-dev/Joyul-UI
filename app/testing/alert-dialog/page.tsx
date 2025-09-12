@@ -6,7 +6,7 @@ import {
   ControlsTitle,
   ControlsFolder,
   ControlsDropdown,
-} from "@/components/controls";
+} from "@/components/controls/index";
 import {
   AlertDialog,
   AlertDialogTrigger,
@@ -26,7 +26,7 @@ export default function AlertDialogExample() {
 
   return (
     <>
-      <Controls title="Controls">
+      <Controls title="Alert Dialog Controls">
         <ControlsTitle title="Actions" />
         <ControlsFolder title="Action 1">
           <ControlsDropdown

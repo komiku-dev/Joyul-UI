@@ -1,4 +1,4 @@
-import { ControlsProvider } from "@/components/controls";
+import { ControlsProvider } from "@/components/controls/index";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { IconArrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
@@ -40,7 +40,7 @@ export default function Layout({
           </div>
         </header>
 
-        <main className="bg-muted relative rounded-2xl aspect-video shadow-2xl flex justify-center items-center border animate-in fade-in slide-in-from-bottom-5 duration-700 ease-out">
+        <main className="bg-muted relative rounded-2xl aspect-video shadow-2xl flex justify-center items-center border animate-in fade-in slide-in-from-bottom-5 duration-700 ease-out overflow-hidden">
           <ControlsProvider>{children}</ControlsProvider>
         </main>
       </div>
