@@ -85,7 +85,7 @@ export async function GET(request: NextRequest) {
 
     const { buffer, contentType } = await generateGradientImage(options);
     
-    return new NextResponse(buffer, {
+    return new NextResponse(new Uint8Array(buffer), {
       status: 200,
       headers: {
         'Content-Type': contentType,
