@@ -6,34 +6,40 @@ export interface ControlsProps {
   children?: React.ReactNode;
   initiallyOpen?: boolean;
 }
+
 export interface ControlsFolderProps {
   title?: string;
   children?: React.ReactNode;
   initiallyOpen?: boolean;
 }
+
 export interface ControlsButtonProps {
   title?: string;
   onClick?: () => void;
   disabled?: boolean;
 }
+
 export interface ControlsCheckboxProps {
   title?: string;
   id: string;
   initialValue: boolean;
   disabled?: boolean;
 }
+
 export interface ControlsToggleProps {
   title?: string;
   id: string;
   initialValue: boolean;
   disabled?: boolean;
 }
+
 export interface ControlsTextProps {
   title?: string;
   id: string;
   initialValue: string;
   disabled?: boolean;
 }
+
 export interface ControlsSliderProps {
   title?: string;
   id: string;
@@ -43,6 +49,7 @@ export interface ControlsSliderProps {
   step?: number;
   disabled?: boolean;
 }
+
 export interface ControlsNumberProps {
   title?: string;
   id: string;
@@ -52,6 +59,7 @@ export interface ControlsNumberProps {
   step?: number;
   disabled?: boolean;
 }
+
 export interface ControlsDropdownProps<T extends string | number> {
   title?: string;
   id: string;
@@ -59,12 +67,14 @@ export interface ControlsDropdownProps<T extends string | number> {
   options: Array<{ label: string; value: T }>;
   disabled?: boolean;
 }
+
 export interface ControlsColorProps {
   title?: string;
   id: string;
   initialValue: string;
   disabled?: boolean;
 }
+
 export interface ControlsTextAreaProps {
   title?: string;
   id: string;
@@ -72,6 +82,7 @@ export interface ControlsTextAreaProps {
   rows?: number;
   disabled?: boolean;
 }
+
 export interface ControlsRangeSliderProps {
   title?: string;
   id: string;
@@ -81,13 +92,16 @@ export interface ControlsRangeSliderProps {
   step?: number;
   disabled?: boolean;
 }
+
 export interface ControlsMonitorProps {
   title?: string;
   id: string;
 }
+
 export interface ControlsTitleProps {
   title?: string;
 }
+
 export interface ControlsRadioGroupProps<T extends string | number> {
   title?: string;
   id: string;
@@ -95,23 +109,28 @@ export interface ControlsRadioGroupProps<T extends string | number> {
   options: Array<{ label: string; value: T }>;
   disabled?: boolean;
 }
+
 export interface ControlsProgressProps {
   title?: string;
   id: string;
   min?: number;
   max?: number;
 }
+
 export interface ControlsInfoProps {
   text: string | React.ReactNode;
 }
+
 export interface ControlsAlertProps {
   text: string;
   variant?: "info" | "success" | "warning" | "error";
   show?: boolean;
 }
+
 export interface ControlsSpacerProps {
   size?: "sm" | "md" | "lg";
 }
+
 export interface ControlsColorArrayProps {
   title?: string;
   id: string;
@@ -120,6 +139,7 @@ export interface ControlsColorArrayProps {
   initiallyOpen?: boolean;
   disabled?: boolean;
 }
+
 export type ControlsConditionalProps = { children: React.ReactNode } & (
   | {
       condition: (state: Record<string, any>) => boolean;
@@ -132,6 +152,7 @@ export type ControlsConditionalProps = { children: React.ReactNode } & (
       is: any;
     }
 );
+
 export interface ControlsStringArrayProps {
   title?: string;
   id: string;
@@ -188,4 +209,11 @@ export interface ControlsImageProps {
   id: string;
   initialValue: string;
   disabled?: boolean;
+}
+
+export interface ControlsIconPickerProps {
+    title?: string;
+    id: string;
+    initialValue: string;
+    disabled?: boolean;
 }

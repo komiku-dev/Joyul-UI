@@ -37,8 +37,7 @@ export function Slider({
     if (parseFloat(inputValue) !== value) {
       setInputValue(value.toString());
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
+  }, [inputValue, value]);
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     updateControl(id, parseFloat(e.target.value));

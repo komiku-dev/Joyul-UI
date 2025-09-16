@@ -23,4 +23,7 @@ export const controlGroupColors = {
 
   // Assets
   ASSETS: "bg-slate-500",
+
+  // 
+  SPECIAL: "bg-cyan-500"
 };
