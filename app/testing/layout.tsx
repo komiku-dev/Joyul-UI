@@ -40,7 +40,7 @@ export default function Layout({
           </div>
         </header>
 
-        <main className="bg-muted relative rounded-2xl aspect-video shadow-2xl flex justify-center items-center border animate-in fade-in slide-in-from-bottom-5 duration-700 ease-out overflow-hidden">
+        <main className="bg-surface relative rounded-2xl aspect-video shadow-2xl flex justify-center items-center border animate-in fade-in slide-in-from-bottom-5 duration-700 ease-out overflow-hidden">
           <ControlsProvider>{children}</ControlsProvider>
         </main>
       </div>

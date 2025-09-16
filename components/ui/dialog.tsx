@@ -2,35 +2,35 @@ import * as React from "react";
 import { cn } from "@/libs/utils";
 import { type VariantProps } from "class-variance-authority";
 
-import { AlertDialog as AlertDialogPrimitives } from "@base-ui-components/react/alert-dialog";
+import { Dialog as DialogPrimitives } from "@base-ui-components/react/dialog";
 import { buttonVariants } from "./button";
 
-function AlertDialog({
+function Dialog({
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitives.Root>) {
-  return <AlertDialogPrimitives.Root {...props} />;
+}: React.ComponentProps<typeof DialogPrimitives.Root>) {
+  return <DialogPrimitives.Root {...props} />;
 }
 
-function AlertDialogTrigger({
+function DialogTrigger({
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitives.Trigger>) {
-  return <AlertDialogPrimitives.Trigger {...props} />;
+}: React.ComponentProps<typeof DialogPrimitives.Trigger>) {
+  return <DialogPrimitives.Trigger {...props} />;
 }
 
-function AlertDialogContent({
+function DialogContent({
   children,
   className,
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitives.Popup>) {
+}: React.ComponentProps<typeof DialogPrimitives.Popup>) {
   return (
-    <AlertDialogPrimitives.Portal>
-      <AlertDialogPrimitives.Backdrop
+    <DialogPrimitives.Portal>
+      <DialogPrimitives.Backdrop
         className={cn(
           "fixed inset-0 bg-black/20 z-50 backdrop-blur-lg",
           "transition-colors data-[open]:animate-in data-[closed]:animate-out data-[open]:fade-in-0 data-[closed]:fade-out-0"
         )}
       />
-      <AlertDialogPrimitives.Popup
+      <DialogPrimitives.Popup
         className={cn(
           "fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-6 w-full max-w-[calc(100%-2rem)] sm:max-w-lg",
           "bg-surface text-foreground rounded-xl outline-border outline-2 transition-all",
@@ -41,51 +41,51 @@ function AlertDialogContent({
         {...props}
       >
         {children}
-      </AlertDialogPrimitives.Popup>
-    </AlertDialogPrimitives.Portal>
+      </DialogPrimitives.Popup>
+    </DialogPrimitives.Portal>
   );
 }
 
-function AlertDialogTitle({
+function DialogTitle({
   className,
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitives.Title>) {
+}: React.ComponentProps<typeof DialogPrimitives.Title>) {
   return (
-    <AlertDialogPrimitives.Title
+    <DialogPrimitives.Title
       className={cn("-mt-1.5 mb-1 text-lg font-medium", className)}
       {...props}
     />
   );
 }
 
-function AlertDialogDescription({
+function DialogDescription({
   className,
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitives.Description>) {
+}: React.ComponentProps<typeof DialogPrimitives.Description>) {
   return (
-    <AlertDialogPrimitives.Description
+    <DialogPrimitives.Description
       className={cn("mb-6 text-base text-muted-foreground", className)}
       {...props}
     />
   );
 }
 
-function AlertDialogActionList({
+function DialogActionList({
   className,
   ...props
 }: React.ComponentProps<"div">) {
   return <div className={cn("flex justify-end gap-4", className)} {...props} />;
 }
 
-function AlertDialogAction({
+function DialogAction({
   variant,
   size,
   className,
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitives.Close> &
+}: React.ComponentProps<typeof DialogPrimitives.Close> &
   VariantProps<typeof buttonVariants>) {
   return (
-    <AlertDialogPrimitives.Close
+    <DialogPrimitives.Close
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />
@@ -93,11 +93,11 @@ function AlertDialogAction({
 }
 
 export {
-  AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogActionList,
-  AlertDialogAction,
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogActionList,
+  DialogAction,
 };

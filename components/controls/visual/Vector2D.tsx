@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import * as React from "react";
 import { cn } from "@/libs/utils";
@@ -61,15 +60,17 @@ export function Vector2D({
     updatePosition(e.nativeEvent);
   };
 
-  const updatePosition = (e: MouseEvent) => {
-    if (!containerRef.current) return;
-    const bounds = containerRef.current.getBoundingClientRect();
-    const x = clamp((e.clientX - bounds.left) / bounds.width, 0, 1) * 2 - 1;
-    const y = -(clamp((e.clientY - bounds.top) / bounds.height, 0, 1) * 2 - 1);
-
-    const finalValue = Array.isArray(value) ? [x, y] : { x, y };
-    updateControl(id, finalValue);
-  };
+  const updatePosition = React.useCallback(
+    (e: MouseEvent) => {
+      if (!containerRef.current) return;
+      const bounds = containerRef.current.getBoundingClientRect();
+      const x = clamp((e.clientX - bounds.left) / bounds.width, 0, 1) * 2 - 1;
+      const y = -(clamp((e.clientY - bounds.top) / bounds.height, 0, 1) * 2 - 1);
+      const finalValue = Array.isArray(value) ? [x, y] : { x, y };
+      updateControl(id, finalValue);
+    },
+    [containerRef, value, updateControl, id]
+  );
 
   const handleDrag = React.useCallback(
     (e: MouseEvent) => {
@@ -77,7 +78,7 @@ export function Vector2D({
       e.preventDefault();
       updatePosition(e);
     },
-    [isDragging, updateControl, id]
+    [isDragging, updatePosition]
   );
 
   const handleDragEnd = React.useCallback(() => {

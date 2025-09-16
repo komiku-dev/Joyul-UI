@@ -56,3 +56,9 @@ export { Vector2D as ControlsVector2D } from "./visual/Vector2D";
 
 // Asset Components
 export { Image as ControlsImage } from "./assets/Image";
+
+// Special Components
+export { IconPicker } from "./special/IconPicker";
+
+// Maps
+export { iconMap } from "./internal/icon-manifest";
